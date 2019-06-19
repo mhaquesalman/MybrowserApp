@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     WebView brow;
     EditText urledit;
-    Button go,forward,back,clear,reload;
+    Button go,forward,back,clear,reload,home;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         back = findViewById(R.id.btn_bck);
         clear = findViewById(R.id.btn_clear);
         reload = findViewById(R.id.btn_reload);
+        home = findViewById(R.id.btn_home);
         progressBar = findViewById(R.id.progressbar);
 
         /* When we click on something in our browser this enables our application
@@ -93,12 +94,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                brow.clearHistory();
-            }
-        });
+        clear.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        brow.clearHistory();
+
+                    }
+                });
+
+        home.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        brow.loadUrl("http://www.google.com");
+                        brow.setWebChromeClient(new WebChromeClient(){
+                            @Override
+                            public void onProgressChanged(WebView view, int newProgress) {
+                                progressBar.setProgress(newProgress);
+                                if(newProgress == 100){
+                                    progressBar.setVisibility(View.GONE);
+                                    urledit.setText("");
+                                }else{
+                                    progressBar.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        });
+                    }
+                });
     }
 
 }

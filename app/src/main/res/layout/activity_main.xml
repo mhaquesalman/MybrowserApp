@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.10"
         android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
         android:weightSum="1">
 
         <EditText
@@ -50,13 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.10"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="5">
 
         <Button
             android:id="@+id/btn_fwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:text="Forward"
             android:textColor="#FFFFFF" />
@@ -65,7 +66,7 @@
             android:id="@+id/btn_bck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:text="Back"
             android:textColor="#FFFFFF" />
@@ -74,7 +75,7 @@
             android:id="@+id/btn_reload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:text="Refresh"
             android:textColor="#FFFFFF" />
@@ -83,9 +84,18 @@
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:text="Clear"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="Home"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
